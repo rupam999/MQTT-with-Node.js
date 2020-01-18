@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Control Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/bbebab2807.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://rupamcompany.000webhostapp.com/smart%20Tubelight/css/main.css">
+	<link rel="stylesheet" type="text/css" href="https://rupamcompany.000webhostapp.com/smart%20Tubelight/css/register.css">
+	<link rel="stylesheet" type="text/css" href="https://rupamcompany.000webhostapp.com/smart%20Tubelight/css/contact.css">
+	<link rel="stylesheet" type="text/css" href="https://rupamcompany.000webhostapp.com/smart%20Tubelight/css/control.css">
+</head>
+<body>
+	
+	<nav class="navbar navbar-light navArea">
+		<div class="container">
+		  <a class="navbar-brand">DASHBOARD</a>
+		  <form class="form-inline">
+		    <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-home"></i></button>
+		  </form>
+		</div>
+	</nav>
+
+	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom" style="margin-bottom: 0px;">
+	  <span class="my-0 mr-md-auto font-weight-normal"></span>
+	  <nav class="my-2 my-md-0 mr-md-3">
+	    <a class="p-2 text-light" href="#">Home</a>
+	    <a class="p-2 text-light" href="/control">Control</a>
+	    <a class="p-2 text-light current" href="/contact"><i class="fas fa-envelope-open-text"></i> Contact Us</a>
+	    <a class="p-2 text-light" href="/">Sign In</a>
+	    <a class="p-2 text-light" href="/register">Register</a>
+	  </nav>
+	</div>
+
+	<div class="container">
+		<div class="card">
+		  <div class="card-header">
+		    <span><i class="fas fa-bookmark"></i> List of your device</span>
+		  </div>
+		  <div class="card-body">
+		    <div class="row">
+				<% if(sendData[0].callApi === 0){ %>
+					<% for(let i=0;i<sendData.length;i++){ %>
+						<% let color = null; %>
+						<% if(sendData[0].statusSend[i] == 1){ %>
+							<div class="col-md-2 product" style="background-color: yellow;">
+						<% } else{ %>
+						<div class="col-md-2 product">
+						<% } %>
+							<center><a id="" href="/apiArea/1/<%= i+1 %>"><i class="fas fa-power-off"></i><br>
+							&nbsp; Hall Light <%= i+1 %></a>
+							</center>
+						</div>
+					<% } %>
+				<% } else { %>
+					<% for(let i=0;i<sendData.length;i++){ %>
+						<% let color = null; %>
+						<% if(sendData[0].statusSend[i] != 1){ %>
+							<div class="col-md-2 product" style="background-color: yellow;">
+						<% } else{ %>
+						<div class="col-md-2 product">
+						<% } %>
+							<center><a id="" href="/apiArea/1/<%= i+1 %>"><i class="fas fa-power-off"></i><br>
+							&nbsp; Hall Light <%= i+1 %></a>
+							</center>
+						</div>
+					<% } %>
+				<% } %>
+
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<br><br>
+	<div class="limiter">
+		<div class="container">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+				<form class="login100-form validate-form">
+					<h3 class="control-heading">Need Assistance ?</h3>
+					<div class="col-auto">
+					  <span>Fill this form to request callback</span>
+					  <div class="form-group" style="margin-top: 5px;">
+					    <input type="text" class="form-control" placeholder="Name">
+					  </div>
+				      <div class="form-group">
+					    <input type="text" class="form-control" placeholder="Contact info">
+					  </div>
+					  <div class="form-group">
+					    <textarea class="form-control" rows="3" placeholder="Comment or Message"></textarea>
+					  </div>
+
+					</div>
+
+					<button type="submit" class="btn btn2 btn-primary">Send</button>
+
+				</form>
+			</div>
+		</div>
+	</div><br><br>
+
+
+
+
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://rupamcompany.000webhostapp.com/smart%20Tubelight/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+.wrap-login100{
+	width: 85%;
+	height: 100%;
+}
+
+.btn2{
+	background-color: #bdc3c7;
+	color: #000;
+	border:1px solid #bdc3c7;
+}
+
+.btn2:hover{
+	background-color: #bdc3c7;
+	color: #000;
+	border:1px solid #000;
+}
+
+h3{
+	font-weight: 520;
+	margin-bottom: 15px;
+}
+
+.form-group{
+	margin-top: 30px;
+	width: 75%;
+}
+
+.form-group input{
+	border-radius: 10px;
+}
+
+.p-2{
+	background-color: rgb(4, 137, 228);
+    position: relative;
+    top: 11px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    color:#fff !important;
+    font-size: 14px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.p-2:hover{
+	background-color: rgb(4, 137, 228);
+    position: relative;
+    top: 11px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    color:#fff !important;
+    font-size: 14px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.current{
+	background-color: rgb(5, 109, 180);
+}
+
+.contact-heading{
+	text-align: center;
+	margin-top: 30px;
+	font-weight: 600;
+	margin-bottom: 40px;
+}
+
+.contact-border{
+	border: 1px solid #c5c5c5;
+	padding: 10px;
+	margin-right: 15px;
+	border-radius: 10px;
+}
+
+h3{
+	font-weight: 600;
+}
+
+.address{
+	height: 210px;
+	border-radius: 10px;
+}
