@@ -10,7 +10,7 @@ const session = require('express-session');
 const connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : 'New#pass111',
+    password : 'Password',
     database : 'smart_tubelight'
 });
 
@@ -42,7 +42,7 @@ app.post("/login", function(req, res){
         const connectionLogin = mysqlLogin.createConnection({
             host     : 'localhost',
             user     : 'root',
-            password : 'New#pass111',
+            password : 'Password',
             database : 'smart_tubelight'
         });
         connectionLogin.connect(function(err) {
@@ -178,7 +178,7 @@ app.get("/control", function(req, res){
         const connectionLight = mysqlLight.createConnection({
             host     : 'localhost',
             user     : 'root',
-            password : 'New#pass111',
+            password : 'Password',
             database : 'smart_tubelight'
         });
         let uid = 1;
@@ -276,7 +276,7 @@ app.get("/apiArea/:deviceid", function(req, res){
         // connection = mysql.createConnection({
         //     host     : 'localhost',
         //     user     : 'root',
-        //     password : '',
+        //     password : 'Password',
         //     database : 'smart_tubelight'
         // });
 
@@ -481,7 +481,7 @@ app.get("/register/:username/:password/:mobileNo/:name", function(req, res){
     const connectionRegister = mysqlRegister.createConnection({
         host     : 'localhost',
         user     : 'root',
-        password : 'New#pass111',
+        password : 'Password',
         database : 'smart_tubelight'
     });
 
@@ -540,7 +540,7 @@ app.get("/login/:username/:password", function(req, res){
         const connectionLogin = mysqlLogin.createConnection({
             host     : 'localhost',
             user     : 'root',
-            password : 'New#pass111',
+            password : 'Password',
             database : 'smart_tubelight'
         });
         connectionLogin.connect(function(err) {
@@ -710,7 +710,7 @@ app.get("/apiArea/:userId/:deviceid", function(req, res){
         // connection = mysql.createConnection({
         //     host     : '172.104.40.208',
                 // user     : 'root',
-                // password : 'New#pass111',
+                // password : 'Password',
                 // database : 'smart_tubelight'
         // });
 
