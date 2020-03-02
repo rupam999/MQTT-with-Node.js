@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Register Page</title>
+	<title>Add Device</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -22,44 +22,38 @@
 
 	<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom" style="margin-bottom: 0px;">
 	  <span class="my-0 mr-md-auto font-weight-normal"></span>
-	  <!-- <nav class="my-2 my-md-0 mr-md-3">
+	  <nav class="my-2 my-md-0 mr-md-3">
 	    <a class="p-2 text-light" href="#">Home</a>
 	    <a class="p-2 text-light" href="/control">Control</a>
 	    <a class="p-2 text-light current" href="/contact"><i class="fas fa-envelope-open-text"></i> Contact Us</a>
 	    <a class="p-2 text-light" href="/addDevice">Add Device</a>
 	    <a class="p-2 text-light" href="/logout">Logout</a>
-	  </nav> -->
+	  </nav>
 	</div>
 	
 	<div class="limiter">
 		<div class="">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form class="login100-form validate-form" method="POST" action="/register">
-					<h3>Register</h3>
-					<% if(objreg[0].response === 1) { %>
-						<p style="color:red;font-size:15px;"><%= objreg[0].msg %></p>
+				<form class="login100-form validate-form" method="POST" action="/addDevice">
+					<h3>Add Device</h3>
+					<% if(objDevice[0].code === 1) { %>
+						<p style="color:red;font-size:15px;"><%= objDevice[0].message %></p>
+                    <% } %>
+                    <% if(objDevice[0].code === 2) { %>
+						<p style="color:green;font-size:15px;"><%= objDevice[0].message %></p>
 					<% } %>
 					<div class="col-auto">
-					  <span>Please fill this form to register</span>
+					  <span>Please fill this form to add a new device</span>
 					  <div class="form-group" style="margin-top: 5px !important;">
-					    <input type="text" class="form-control" required name="name" placeholder="Name" >
+					    <input type="text" class="form-control" required name="deviceName" placeholder="Device Name" >
 					  </div>
 				      <div class="form-group">
-					    <input type="email" class="form-control" required name="email" placeholder="email">
-					  </div>
-					  <div class="form-group">
-					    <input type="text" class="form-control" required name="mobileNumber" placeholder="Mobile Number">
-					  </div>
-					  <div class="form-group">
-					    <input type="password" class="form-control" required name="password" placeholder="Password">
-					  </div>
-					  <div class="form-group">
-					    <input type="password" class="form-control" name="confirmpassword" required placeholder="Confirm Password">
+					    <input type="text" class="form-control" required name="deviceId" placeholder="Device Id">
 					  </div>
 
 					</div>
 
-					<input type="submit" class="btn btn2 btn-primary" value="Register" >
+					<input type="submit" class="btn btn2 btn-primary" value="Add Device" >
 				</form>
 			</div>
 		</div>

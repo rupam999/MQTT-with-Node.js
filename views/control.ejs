@@ -28,8 +28,8 @@
 	    <a class="p-2 text-light" href="#">Home</a>
 	    <a class="p-2 text-light" href="/control">Control</a>
 	    <a class="p-2 text-light current" href="/contact"><i class="fas fa-envelope-open-text"></i> Contact Us</a>
-	    <a class="p-2 text-light" href="/">Sign In</a>
-	    <a class="p-2 text-light" href="/register">Register</a>
+	    <a class="p-2 text-light" href="/addDevice">Add Device</a>
+	    <a class="p-2 text-light" href="/logout">Logout</a>
 	  </nav>
 	</div>
 
@@ -41,28 +41,30 @@
 		  <div class="card-body">
 		    <div class="row">
 				<% if(sendData[0].callApi === 0){ %>
-					<% for(let i=0;i<sendData.length;i++){ %>
+					<% let len = sendData[0].statusSend %>
+					<% for(let i=0;i<len.length;i++){ %>
 						<% let color = null; %>
 						<% if(sendData[0].statusSend[i] == 1){ %>
 							<div class="col-md-2 product" style="background-color: yellow;">
 						<% } else{ %>
-						<div class="col-md-2 product">
+						<div class="col-md-2 product" style="background-color: #E9E9E9;">
 						<% } %>
-							<center><a id="" href="/apiArea/1/<%= i+1 %>"><i class="fas fa-power-off"></i><br>
-							&nbsp; Hall Light <%= i+1 %></a>
+							<center><a id="" href="/apiArea/<%= sendData[0].idSend[i] %>"><i class="fas fa-power-off"></i><br>
+							&nbsp; <%= sendData[0].deviceSend[i] %></a>
 							</center>
 						</div>
 					<% } %>
 				<% } else { %>
-					<% for(let i=0;i<sendData.length;i++){ %>
+					<% let len = sendData[0].statusSend %>
+					<% for(let i=0;i<len.length;i++){ %>
 						<% let color = null; %>
 						<% if(sendData[0].statusSend[i] != 1){ %>
 							<div class="col-md-2 product" style="background-color: yellow;">
 						<% } else{ %>
-						<div class="col-md-2 product">
+						<div class="col-md-2 product" style="background-color: #E9E9E9;">
 						<% } %>
-							<center><a id="" href="/apiArea/1/<%= i+1 %>"><i class="fas fa-power-off"></i><br>
-							&nbsp; Hall Light <%= i+1 %></a>
+							<center><a id="" href="/apiArea/<%= sendData[0].idSend[i] %>"><i class="fas fa-power-off"></i><br>
+							&nbsp; <%= sendData[0].deviceSend[i] %></a>
 							</center>
 						</div>
 					<% } %>
